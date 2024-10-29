@@ -1,13 +1,20 @@
-import { FaCopy } from "react-icons/fa6"
 import { useColorStore } from "../Store"
 import { useRef } from "react";
 import { toast } from "react-toastify";
+import { BiCopy } from "react-icons/bi";
 
 const CodePreview = () => {
 	const ref = useRef();
+	const gradientType = useColorStore(state => state.gradientType);
 	const gradientColors = useColorStore(state => state.colors);
 	const rotateAngle = useColorStore(state => state.rotateAngle);
-	const gradientString = `linear-gradient(${rotateAngle}deg, ${gradientColors.toString()})`;
+
+
+	const gradientString = gradientType === 'linear' ? `linear-gradient(${rotateAngle}deg, ${gradientColors.toString()})` :
+		gradientType === 'radial' ? `radial-gradient(${gradientColors.toString()})` :
+			`conic-gradient(${gradientColors.toString()})`;
+
+
 	async function handleClick() {
 		if (window.isSecureContext) {
 			const clipboard = window.navigator.clipboard;
@@ -27,7 +34,7 @@ const CodePreview = () => {
 			<div style={{ scrollbarWidth: "none" }} className="flex items-center justify-between gap-4 bg-slate-950 text-yellow-300 p-4 rounded-md shadow-md overflow-x-scroll sm:p-6">
 				<code ref={ref}>background-image: {gradientString}</code>
 				<button className="text-xl flex-none p-1 text-white" onClick={handleClick}>
-					<FaCopy />
+					<BiCopy />
 				</button>
 			</div>
 		</div>

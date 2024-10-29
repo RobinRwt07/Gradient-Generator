@@ -1,5 +1,6 @@
 import CodePreview from "./Components/CodePreview"
 import GradientPreview from "./Components/GradientPreview"
+import GradientTypes from "./Components/GradientTypes"
 import Header from "./Components/Header"
 import RotateSlider from "./Components/RotateSlider"
 import SelectedColors from "./Components/SelectedColors"
@@ -11,13 +12,14 @@ function App() {
 		<>
 			<div className="max-w-screen-xl mx-auto">
 				<Header />
-				<div className="box flex gap-4 flex-col mt-4 *:flex-1  lg:flex-row">
+				<div className="box flex gap-4 flex-col *:flex-1  lg:flex-row">
 					<GradientPreview />
 					<div>
 						<CodePreview />
 						<RotateSlider />
 					</div>
 				</div>
+				<GradientTypes />
 				<SelectedColors />
 			</div>
 			<ToastContainer autoClose={1000} />

@@ -28,12 +28,12 @@ const SelectedColors = () => {
 	return (
 		<div className="box">
 			<h3 className="text-md font-bold mb-2">Add Colors</h3>
-			<div className="flex flex-wrap items-center gap-8 bg-gray-50 p-4 rounded-md  justify-center sm:p-6 ">
-				<div className="flex flex-wrap items-center gap-2">
+			<div className="flex flex-wrap items-center gap-8 bg-slate-100 p-4 rounded-md  justify-center sm:p-6 ">
+				<div className="flex flex-wrap items-center justify-center gap-3">
 					{
-						gradientColors.map((color) => {
+						gradientColors.map((color, index) => {
 							return (
-								<div key={color} className="flex flex-col items-center justify-center gap-2">
+								<div key={index} className="flex flex-col items-center justify-center gap-2">
 									<div style={{ backgroundColor: color }} className="selectedColors group/box" onClick={() => handleUpdateColor(color)} />
 									<button className="p-2 appearance-none text-md bg-gray-200 rounded-md text-red-500 hover:bg-gray-300" onClick={() => removeColor(color)}>
 										<FaTrash />

@@ -13,7 +13,6 @@ const ColorPicker = ({ color = "#000000", handlePickerClose, type = "add", setCo
 	function handleColorUpdate(event) {
 		if (type == "update") {
 			const hexColor = tinycolor(event.rgb).toHex8String();
-			console.log(color, hexColor);
 			updateColor(color, hexColor);
 		}
 	}
