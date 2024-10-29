@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { FaPlus, FaTrash } from "react-icons/fa6";
 import ColorPicker from "./ColorPicker";
 import { useColorStore } from "../Store";
 const SelectedColors = () => {
@@ -35,8 +34,8 @@ const SelectedColors = () => {
 							return (
 								<div key={index} className="flex flex-col items-center justify-center gap-2">
 									<div style={{ backgroundColor: color }} className="selectedColors group/box" onClick={() => handleUpdateColor(color)} />
-									<button className="p-2 appearance-none text-md bg-gray-200 rounded-md text-red-500 hover:bg-gray-300" onClick={() => removeColor(color)}>
-										<FaTrash />
+									<button className="p-2 appearance-none text-sm font-extrabold bg-gray-200 rounded-md text-red-500 hover:bg-gray-300" onClick={() => removeColor(color)}>
+										&#x2613;
 									</button>
 								</div>
 							)
@@ -44,7 +43,7 @@ const SelectedColors = () => {
 					}
 				</div>
 				<button type="button" onClick={handleAddClick} className="size-14 shrink-0 appearance-none bg-gray-200 shadow-md flex items-center justify-center rounded-md text-2xl hover:bg-gray-300">
-					<FaPlus />
+					+
 				</button>
 				{
 					displayColorPicker.active ?
