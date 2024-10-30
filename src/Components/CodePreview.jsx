@@ -1,6 +1,7 @@
 import { useColorStore } from "../Store"
 import { useRef } from "react";
 import { toast } from "react-toastify";
+import { FaCopy } from "react-icons/fa";
 
 const CodePreview = () => {
 	const ref = useRef();
@@ -33,7 +34,7 @@ const CodePreview = () => {
 			<div style={{ scrollbarWidth: "none" }} className="flex items-center justify-between gap-4 bg-slate-950 text-yellow-300 p-4 rounded-md shadow-md overflow-x-scroll sm:p-6">
 				<code ref={ref}>background-image: {gradientString}</code>
 				<button className="text-xl flex-none p-1 text-white" onClick={handleClick}>
-					&#10063;
+					<FaCopy />
 				</button>
 			</div>
 		</div>
